@@ -37,6 +37,8 @@ justify-content: center;
 }
 
 #container{
+background: url("resources/background.jpg");
+background-size: cover;
 border: 0px solid red;
 margin-top: 20px;
 position: relative;
@@ -73,6 +75,12 @@ justify-content: flex-start;
 let create= (x)=> document.createElement(x),
 select= (x,y=document)=> y.querySelector(x),
 selectAll= (x,y=document)=> y.querySelectorAll(x);
+
+
+select("#container").innerHTML=
+select("#container").innerHTML.replace(/\n/g,"<br>");
+
+
 
 /*
 fetch("https://kawiesh.tk")
