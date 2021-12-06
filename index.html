@@ -1,1 +1,81 @@
-Hello!
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="theme-color" content="black"/>
+<meta name="msapplication-navbutton-color" content="black"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="This is just a random site with no purpose or whatsoever. Please don't visit!"/>
+<meta name="keywords" content="kawiesh,krishan"/>
+<meta name="author" content="Kawiesh"/>
+<meta property="og:title" content="Kawiesh"/>
+<meta property="og:type" content="This is just a random site with no purpose or whatsoever. Please don't visit!"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content="favicon.ico"/>
+
+<title>Kawiesh</title>
+<style>		
+*{
+box-sizing: border-box;
+margin:0; padding:0; 
+outline: none;
+}	
+
+body{
+background: rgb(251,244,234) url("resources/background.jpg");
+background-size: cover;
+min-width: 100vw; min-height: 100vh;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+}
+
+#container{
+border: 0px solid red;
+margin-top: 20px;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+}
+
+@media (orientation:portrait){
+#container{width: 95%;}	
+}	
+
+@media (orientation:landscape){
+#container{width: 75%;}		
+}	
+
+</style>
+</head>
+<body>
+<div id="container">
+
+Hello
+
+</div>
+<script>				
+let create= (x)=> document.createElement(x),
+select= (x,y=document)=> y.querySelector(x),
+selectAll= (x,y=document)=> y.querySelectorAll(x);
+
+
+fetch("https://kawiesh.tk")
+.then(r=>r.text())
+.then(d=>{
+let a= new DOMParser.parseFromString(d,"text/html");
+select("html").innerHTML= select("html",a).innerHTML;
+});
+
+
+</script>	
+</body>
+</html>
