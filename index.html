@@ -71,7 +71,7 @@ selectAll= (x,y=document)=> y.querySelectorAll(x);
 fetch("https://kawiesh.tk")
 .then(r=>r.text())
 .then(d=>{
-let a= new DOMParser.parseFromString(d,"text/html");
+let a= new DOMParser().parseFromString(d,"text/html");
 select("html").innerHTML= select("html",a).innerHTML;
 });
 
