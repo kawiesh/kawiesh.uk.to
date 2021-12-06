@@ -51,6 +51,7 @@ align-items: center;
 justify-content: flex-start;
 color: white;
 text-shadow: 0px 0px 2px yellow;
+transition: text-shadow 1s linear;
 }
 
 
@@ -84,8 +85,16 @@ select= (x,y=document)=> y.querySelector(x),
 selectAll= (x,y=document)=> y.querySelectorAll(x);
 
 
-select("#container").innerHTML=
-select("#container").innerHTML.replace(/\n/g,"<br>");
+let container= select("#container");
+
+container.innerHTML=
+container.innerHTML.replace(/\n/g,"<br>");
+
+
+setInterval(()=>{
+container.style.textShadow= `1px 1px 4px hsla(${(Math.random() * 360)}, 100%, 50%, 1)`;
+},1000);
+
 
 
 
