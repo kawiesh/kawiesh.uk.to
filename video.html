@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Video Player</title>
+<style>
+*{
+box-sizing: border-box;
+border: none; outline: none;
+}
+
+html,body{
+width:100%;
+height:100%;
+position:relative;
+}
+
+body{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+div,video{
+width: 95%;
+}
+
+
+</style>
+</head>
+<body>
+<div>
+<input placeholder="src" class="src">
+<button class="go">
+</div>
+<video controls></video>
+<script>
+let $=x=>document.querySelector(x),
+$$=x=>document.createElement(x);
+
+let src= $(".src"),
+go= $(".go"),
+video= $("video");
+
+
+go.onclick=()=>{
+video.pause();
+video.src= src.value;
+video.load();
+};
+
+
+</script>
+</body>
+</html>
